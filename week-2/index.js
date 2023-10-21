@@ -3,7 +3,9 @@ const app = express()
 const port = 3000
 
 function firstHandle(req, res){
-    res.send("hello world")
+    var ans = calSum(100);
+    var f = "the sum is " + ans;
+    res.send(f)
 }
 
 app.get('/', firstHandle)
@@ -13,3 +15,13 @@ function listenn(){
 }
 
 app.listen(port, listenn)
+
+
+function calSum(num){
+    var sum = 0;
+    for(var i =0; i < num; i++){
+        sum = sum + 1;
+    }
+    return sum;
+}
+
