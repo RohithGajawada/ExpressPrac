@@ -3,7 +3,8 @@ const app = express()
 const port = 3000
 
 function firstHandle(req, res){
-    var ans = calSum(1000);
+    var c = req.query.c;
+    var ans = calSum(c);
     var f = "the sum is " + ans;
     res.send(f)
 }
@@ -17,7 +18,7 @@ function listenn(){
 app.listen(port, listenn)
 
 
-function calSum(num){
+function calSum(num){      
     var sum = 0;
     for(var i =0; i < num; i++){
         sum = sum + i;
